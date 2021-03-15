@@ -21,7 +21,7 @@ int main() {
 
 	// sfml window settings;
 	sf::ContextSettings config;
-	config.antialiasingLevel = 8;
+	config.antialiasingLevel = 2;
 
 	sf::RenderWindow window(sf::VideoMode(600, 600), "SFML works!", 0, config);
 	window.setFramerateLimit(144);
