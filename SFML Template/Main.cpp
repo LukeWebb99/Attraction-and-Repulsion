@@ -23,7 +23,7 @@ int main() {
 	sf::ContextSettings config;
 	config.antialiasingLevel = 2;
 
-	sf::RenderWindow window(sf::VideoMode(600, 600), "SFML works!", 0, config);
+	sf::RenderWindow window(sf::VideoMode(600, 600), "SFML works!", sf::Style::Close, config);
 	window.setFramerateLimit(144);
 
 	vector<Particle> Particles;
@@ -47,13 +47,12 @@ int main() {
 				window.close();
 		}
 		
-		attarctor.x = sf::Mouse::getPosition(window).x;
-		attarctor.y = sf::Mouse::getPosition(window).y;
+		attarctor = (sf::Vector2f)sf::Mouse::getPosition(window);
 
 		window.clear(sf::Color::Transparent);
 
 		for (int i = 0; i < Particles.size(); i++) {
-		    Particles[i].attracted(attarctor);
+		    Particles[i].attracted(&attarctor);
 		    Particles[i].update();
 	     	Particles[i].display(window);
 		}

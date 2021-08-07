@@ -16,7 +16,7 @@ public:
 		acc = Vector2f(0, 0);
 	}
 
-	void attracted(Vector2f Target);
+	void attracted(Vector2f* Target);
 	void update();
 	void display(sf::RenderWindow &MainWindow);
 

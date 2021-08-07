@@ -49,9 +49,9 @@ void Particle::update()
 	pos += vel;
 }
 
-void Particle::attracted(Vector2f Target)
+void Particle::attracted(Vector2f* Target)
 {
-	 Vector2f Force = (Target - pos);
+	 Vector2f Force = (*Target - pos);
 	 float dsquared = magSq(Force);
 	 dsquared = constrain(dsquared, 30, 100);
 	 float G = 22;
